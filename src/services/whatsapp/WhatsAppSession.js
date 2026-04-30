@@ -554,6 +554,7 @@ class WhatsAppSession {
     }
 
     formatJid(id, isGroup = false) {
+        if (!id) return null;
         if (id.includes('@')) return id;
         
         let formatted = id.replace(/\D/g, '');
