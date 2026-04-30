@@ -536,7 +536,7 @@ class WhatsAppSession {
         }
         if (phone.includes('@')) {
             if (phone.includes('@g.us')) {
-                return phone.replace('@c.us', '@g.us');
+                return phone;
             }
             return phone;
         }
@@ -570,7 +570,7 @@ class WhatsAppSession {
         }
         if (chatId.includes('@')) {
             if (chatId.includes('@g.us')) {
-                return chatId.replace('@c.us', '@g.us');
+                return chatId;
             }
             return chatId;
         }
@@ -610,6 +610,7 @@ class WhatsAppSession {
     }
 
     isGroupId(chatId) {
+        if (!chatId) return false;
         return chatId.includes('@g.us');
     }
 
